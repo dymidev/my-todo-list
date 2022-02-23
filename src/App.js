@@ -1,17 +1,17 @@
-import { FormControl, OutlinedInput, Typography } from '@mui/material';
+import { FormControl, OutlinedInput, Typography, Box } from '@mui/material';
 
 function App() {
   return (
-    <div>
-      <Typography variant='h3'align='center'>
+    <Box display="flex" justifyContent="center" flexDirection="column">
+      <Typography variant='h3'>
          My Todo List 
-      </Typography>;
+      </Typography>
 
       <FormControl sx={{ width: '25ch' }}>
         <OutlinedInput placeholder="Please enter text" />
         
       </FormControl>
-    </div>
+    </Box>
   );
 }
 
