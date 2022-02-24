@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.automationProfile.linux": {
+    "path": "bash",
+    "icon": "terminal-bash"
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "files.eol": "\n"
+}
