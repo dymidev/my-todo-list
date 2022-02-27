@@ -6,9 +6,11 @@ import {
   Button,
   ListItem,
   ListItemText,
+  IconButton,
   List,
 } from "@mui/material";
 import { useState } from "react";
+import { Delete } from "@mui/icons-material";
 function App() {
   const [todo, setTodo] = useState("");
   const [list, setList] = useState([]);
@@ -30,7 +32,18 @@ function App() {
       </FormControl>
       <List>
         {list.map((l) => (
-          <ListItem key={l}>
+          <ListItem
+            key={l}
+            secondaryAction={
+              <IconButton
+                edge="end"
+                aria-label="delete"
+                onClick={() => deleteItem(l)}
+              >
+                <Delete />
+              </IconButton>
+            }
+          >
             <ListItemText primary={l} secondary={l} />
           </ListItem>
         ))}
@@ -42,8 +55,14 @@ function App() {
     if (list[list.length - 1] === todo || todo === "") {
       return;
     }
-    setList([...list, todo]);
+    const newList = [...list, todo];
+    setList(newList);
     setTodo("");
+  }
+
+  function deleteItem(item) {
+    const newList = list.filter((t) => t !== item);
+    setList(newList);
   }
 }
 
