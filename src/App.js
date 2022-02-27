@@ -4,6 +4,9 @@ import {
   Typography,
   Box,
   Button,
+  ListItem,
+  ListItemText,
+  List,
 } from "@mui/material";
 import { useState } from "react";
 function App() {
@@ -13,7 +16,6 @@ function App() {
   return (
     <Box display="flex" justifyContent="center" flexDirection="column">
       <Typography variant="h3">My Todo List</Typography>
-
       <FormControl sx={{ width: "25ch" }} noValidate>
         <OutlinedInput
           placeholder="Please enter text"
@@ -26,6 +28,13 @@ function App() {
           Add
         </Button>
       </FormControl>
+      <List>
+        {list.map((l) => (
+          <ListItem key={l}>
+            <ListItemText primary={l} secondary={l} />
+          </ListItem>
+        ))}
+      </List>
     </Box>
   );
 
